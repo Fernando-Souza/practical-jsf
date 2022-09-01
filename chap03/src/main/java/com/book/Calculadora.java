@@ -73,7 +73,35 @@ public class Calculadora {
         }
         
         return "";
-    } 
+    }
     
+    public String printTree(){
+        
+        UIViewRoot root = FacesContext.getCurrentInstance().getViewRoot();
+        printTree(root,0);
+        return "";
+    }
+    
+    public void printTree(UIComponent element,int level){
+        
+             
+        logElement(level,element);
+        
+        for(UIComponent child:element.getChildren()){
+            printTree(child, level+1);
+        }
+    }
+    
+    private void logElement(int level, UIComponent element){
+        String out = "";        
+        
+        for(int i=0; i<level;i++){
+            
+            out+="---";
+        }
+        
+        out+=element.getClass().getSimpleName()+"-"+element.getFamily()+"-"+element.getRendererType();
+        LOGGER.log(Level.INFO,out);
+    }
     
 }

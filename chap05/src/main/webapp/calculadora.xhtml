@@ -26,8 +26,32 @@
                 <h:outputLabel value="Resultado"/>
                 <h:outputText value="#{calculadora.result}"/>
             </div>
-            
-            
+            <div>
+                <h:outputLabel value="Resultado recebe 10"/><br/>
+                #{calculadora.result=10}
+            </div> 
+            <div>
+                <h:outputLabel value="Resultado+10"/><br/>
+                #{calculadora.result=calculadora.result+10}
+            </div> 
+            <div>
+                <h:outputLabel value="Resultado"/><br/>
+                #{calculadora.result}
+            </div> 
+            <div>
+                <h:outputLabel value="Resultado =10"/><br/>
+                #{calculadora.result=10}
+            </div> 
+            <div>
+                <h:outputLabel value="Resultado"/><br/>
+                #{calculadora.result+=10}
+            </div>
+            <div>
+                <h:outputLabel value="Resultado"/>
+                #{calculadora.result}
+            </div> 
+
+
         </h:form>
     </h:body>
 </html>

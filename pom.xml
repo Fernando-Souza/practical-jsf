@@ -63,8 +63,10 @@
         </plugins>
     </build>   
   <modules>        
-    <module>chap01</module>        
-    <module>chap02</module>    
-    <module>chap001</module>      
+    <module>chap01</module>    
+    <module>chap001</module>
+    <module>chap03</module>
+    <module>chap04</module>
+    <module>chap05</module>
   </modules>
 </project>
