@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Calculadora</title>
+    </h:head>
+    <h:body>
+        <h1 id="Titulo">Calculadora</h1>
+        <h:form id="form">
+            <div>
+                <h:outputLabel value="Numero 1"/>
+                <h:inputText id="param1" value="#{calculadora.param1}"/>
+            </div>
+            <div>
+                <h:outputLabel value="Numero 2"/>
+                <h:inputText id="param2" value="#{calculadora.param2}"/>
+            </div>
+            <div>
+                <h:outputLabel value="Operação"/>
+                <h:commandButton  id="somar" value="Adicionar" action="#{calculadora.adicionar()}"/>
+                <h:commandButton id="subtrair" value="Subtrair" action="#{calculadora.subtrair()}"/>
+                <h:commandButton id="multiplicar" value="Multiplicar" action="#{calculadora.multiplicar()}"/>
+                <h:commandButton id="dividir" value="Dividir" action="#{calculadora.dividir()}"/>                
+            </div>
+            <div>
+                <h:outputLabel value="Resultado"/>
+                <h:outputText id="resultado" value="#{calculadora.result}"/>
+            </div>
+            
+            
+        </h:form>
+    </h:body>
+</html>

@@ -1,57 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
         <title>Calculadora</title>
-    </h:head>
-    <h:body>
+    </head>
+    <body>
         <h1>Calculadora</h1>
-        <h:form>
+        <form jsf:id="calc">
             <div>
-                <h:outputLabel value="Numero 1"/>
-                <h:inputText value="#{calculadora.param1}"/>
+                Param1:<input type="text" jsf:value="#{calculadora.param1}"/>
             </div>
             <div>
-                <h:outputLabel value="Numero 1"/>
-                <h:inputText value="#{calculadora.param2}"/>
+                Param2:<input type="text" jsf:value="#{calculadora.param2}"/>
             </div>
             <div>
-                <h:outputLabel value="Operação"/>
-                <h:commandButton value="Adicionar" action="#{calculadora.adicionar()}"/>
-                <h:commandButton value="Subtrair" action="#{calculadora.subtrair()}"/>
-                <h:commandButton value="Multiplicar" action="#{calculadora.multiplicar()}"/>
-                <h:commandButton value="Dividir" action="#{calculadora.dividir()}"/>                
-            </div>
-            <div>
-                <h:outputLabel value="Resultado"/>
-                <h:outputText value="#{calculadora.result}"/>
-            </div>
-            <div>
-                <h:outputLabel value="Resultado recebe 10"/><br/>
-                #{calculadora.result=10}
-            </div> 
-            <div>
-                <h:outputLabel value="Resultado+10"/><br/>
-                #{calculadora.result=calculadora.result+10}
-            </div> 
-            <div>
-                <h:outputLabel value="Resultado"/><br/>
-                #{calculadora.result}
-            </div> 
-            <div>
-                <h:outputLabel value="Resultado =10"/><br/>
-                #{calculadora.result=10}
-            </div> 
-            <div>
-                <h:outputLabel value="Resultado"/><br/>
-                #{calculadora.result+=10}
-            </div>
-            <div>
-                <h:outputLabel value="Resultado"/>
-                #{calculadora.result}
-            </div> 
-
-
-        </h:form>
-    </h:body>
+                <input type="submit" value="Add" jsf:action="#{calculadora.adicionar()}"/>
+                <input type="submit" value="Subrair" jsf:action="#{calculadora.subtrair()}"/>
+                <input type="submit" value="Multiplicar" jsf:action="#{calculadora.multiplicar()}"/>
+                <input type="submit" value="Dividir" jsf:action="#{calculadora.dividir()}"/>                
+            </div>            
+        </form>
+        <div>
+            <h:outputLabel value="Resultado : "/>
+            <h:outputText value="#{calculadora.result}"/>
+        </div>
+    </body>
 </html>

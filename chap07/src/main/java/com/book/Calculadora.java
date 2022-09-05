@@ -2,6 +2,7 @@ package com.book;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
+import java.util.logging.Logger;
 
 @Named
 @RequestScoped
@@ -10,8 +11,12 @@ public class Calculadora {
     private double param1;
     private double param2;
     private double result;
-  
-        
+    
+    private static final Logger LOGGER = Logger.getLogger("Calculadora");
+    
+    public Calculadora(){
+        LOGGER.log(java.util.logging.Level.INFO,"ctor CALCULADORA!!!!");
+    }
 
     public double getParam1() {
         return param1;

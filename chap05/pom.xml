@@ -8,25 +8,11 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>com.book</groupId>
-  <artifactId>chap01</artifactId>
+  <artifactId>chap05</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>chap05</name>
   <packaging>war</packaging>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.platform</groupId>
-      <artifactId>jakarta.jakartaee-api</artifactId>
-      <version>9.1.0</version>
-      <type>jar</type>
-    </dependency>
-  </dependencies>
+  <url>http://maven.apache.org</url>  
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
