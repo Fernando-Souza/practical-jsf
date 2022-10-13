@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-         
-    <modelVersion>4.0.0</modelVersion>   
-    <groupId>com.book</groupId>   
-    <artifactId>jpracticaljsf</artifactId>   
-    <packaging>pom</packaging>    
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.book</groupId>
+    <artifactId>jpracticaljsf</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>jpracticaljsf</name>  
+    <name>jpracticaljsf</name>
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <selenium.version>5.0.2</selenium.version>
-    </properties>     
+    </properties>
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
             <version>9.1.0</version>
             <type>jar</type>
-        </dependency>  
+        </dependency>        
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -31,7 +32,7 @@
             <artifactId>hamcrest-library</artifactId>
             <version>2.2</version>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
@@ -42,83 +43,173 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.0.2</version>
-            <scope>test</scope>                        
-        </dependency>        
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-runner</artifactId>
             <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>   
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
+        </dependency>    
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core-jakarta</artifactId>
+            <version>5.6.12.Final</version>
+        </dependency>
+
+    </dependencies>
     <build>
+
         <plugins>
+
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
+
                 <artifactId>maven-compiler-plugin</artifactId>
+
                 <version>3.10.1</version>
+
                 <configuration>
+
                     <source>${java.version}</source>
-                    <target>${java.version}</target>                    
+
+                    <target>${java.version}</target>
+
+
                 </configuration>
+
             </plugin>
+
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
+
                 <artifactId>maven-war-plugin</artifactId>
+
                 <version>3.3.2</version>
+
                 <configuration>
+
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+
                 </configuration>
+
             </plugin>
+
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
+
                 <artifactId>maven-dependency-plugin</artifactId>
+
                 <version>2.6</version>
+
                 <executions>
+
                     <execution>
+
                         <phase>validate</phase>
+
                         <goals>
+
                             <goal>copy</goal>
+
                         </goals>
+
                         <configuration>
+
                             <outputDirectory>${endorsed.dir}</outputDirectory>
+
                             <silent>true</silent>
+
                             <artifactItems>
+
                                 <artifactItem>
+
                                     <groupId>javax</groupId>
+
                                     <artifactId>javaee-endorsed-api</artifactId>
+
                                     <version>7.0</version>
+
                                     <type>jar</type>
+
                                 </artifactItem>
+
                             </artifactItems>
+
                         </configuration>
+
                     </execution>
+
                 </executions>
-            </plugin> 
+
+            </plugin>
+
+
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
+
                 <artifactId>maven-surefire-plugin</artifactId>
+
                 <version>2.19.1</version>
+
                 <configuration>
+
                     <excludes>
                         com.book.selenium.*
                     </excludes>
+
                 </configuration>
-                <dependencies>                    
+
+                <dependencies>
+
+
                     <dependency>
+
                         <groupId>org.junit.jupiter</groupId>
+
                         <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.0.2</version>                                   
+
+                        <version>5.0.2</version>
+
+
                     </dependency>
-                </dependencies>                
-            </plugin>                               
+
+                </dependencies>
+
+
+            </plugin>
+
+
         </plugins>
-    </build>   
-    <modules>        
-        <module>chap01</module>        
+
+    </build>
+
+
+    <modules>
+
+
+        <module>chap01</module>
+
+
         <module>chap03</module>
+
         <module>chap04</module>
+
         <module>chap05</module>
+
         <module>chap07</module>
+
+        <module>chap10</module>
+
     </modules>
+
 </project>
