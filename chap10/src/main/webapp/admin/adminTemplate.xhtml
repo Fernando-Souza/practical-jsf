@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="#{sessionTools.language}">
+        <h:head>
+            <title>Books</title>
+            <h:outputStylesheet library="css"  name="books.css"/>
+            <f:metadata>
+                <f:event type="preRenderView" listener="#{sessionTools.preRenderView('Admin')}"/>
+            </f:metadata>
+        </h:head>
+        <h:body>
+            <div id="adminWrapper">
+                <header>
+                    <h1>Lista de livros do Fernando - Página do Adminstrador</h1>
+                </header>
+                <main>
+                    <ui:insert name="content">Aqui vai o conteúdo</ui:insert>
+                </main>
+                <nav>
+                    <ui:include src="/common/commonNavibar.xhtml"/>
+                    <div>
+                        <h:link styleClass="button"
+                                value="#{msg.btnWelcome}"
+                                outcome="#{sessionTools.pages.AdminCategoryEditor}"/>
+                        <h:link styleClass="button"
+                                value="#{msg.btnAdmin}"
+                                outcome="#{sessionTools.pages.AdminBookEditor}"/>
+                    </div>
+                </nav>
+                <footer>
+                    <ui:include src="/common/commonFooter.xhtml"/>
+                </footer>
+
+            </div>
+        </h:body>
+    </f:view>
+</html>
+

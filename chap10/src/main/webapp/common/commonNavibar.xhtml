@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <div>
+        <h:form>
+            <h:outputLabel value="#{msg.boxMsg}" for="languages"/>
+            <div id="languages">                
+                <h:commandButton styleClass="button" action="#{sessionTools.changeLanguage('de')}" immediate="true" value="Deutsch"><f:setPropertyActionListener target="#{sessionTools.usuario}" value="Admin" /></h:commandButton>               
+                <h:commandButton styleClass="button" action="#{sessionTools.changeLanguage('en')}" immediate="true" value="English"><f:setPropertyActionListener target="#{sessionTools.usuario}" value="Admin" /></h:commandButton>
+
+            </div>
+        </h:form>
+
+    </div>
+
+</ui:composition>
+

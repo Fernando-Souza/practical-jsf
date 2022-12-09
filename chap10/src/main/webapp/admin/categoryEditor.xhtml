@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/admin/categoryTemplate.xhtml">
+    <ui:define name="editContent">
+        <h1>Edit as categorias</h1>
+        <h:form>
+            <h:dataTable value="#{categoriaControler.categorias}" var="cat" styleClass="wide"
+                   columnClasses="colIcon colAuto">
+                <h:column>
+                    <h:commandLink action="#{categoriaControler.deleteCategoria(cat)}">
+                        <h:graphicImage alt="deletar" name="delete16.png" library="icons" title="Deletar"/>
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <h:inputText value="#{cat.nome}"/>
+                </h:column>              
+            </h:dataTable>
+            <h:commandLink styleClass="button" value="Adicionar" action="#{CategoriaControler.addCategoria}"/>
+            <h:commandLink styleClass="button" value="Salvar" action="#{CategoriaControler.salvar}"/>
+            <h:commandLink styleClass="button" value="Apagar Tudo" action="#{CategoriaControler.deletarTudo}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
